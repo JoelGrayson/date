@@ -18,16 +18,21 @@ typedef long Seconds;
 // const int SECONDS_IN_MINUTE=60;
 
 /**
+ * Lets you interpret time in years, months, days, hours, minutes, and seconds
  * Limitations: ignores leap seconds as most unix time does. This means it differs from UTC time slightly by under 1 minute.
  */
 class Date {
 public:
+    /** default constructor which initializes to now */
     Date();
+    /** initialize to now with a utc offset */
     Date(double utcOffset);
     Date(int year, int month, int day);
 
-    static int now(); //gets unix time for now
+    /** Date::now() gets unix time for now */
+    static int now();
     
+    /** @return unix time */
     Seconds getUnixTime() const;
     void setUnixTime(Seconds newUnixTime);
     double getUTCOffset() const;
@@ -41,8 +46,10 @@ public:
     std::string toString24HourFormat() const;
     std::string toDateString() const;
 private:
-    Seconds unixTime; //seconds since 1/1/1970 12:00 UTC
-    double utcOffset; //in hours
+    /** seconds since 1/1/1970 12:00 UTC */
+    Seconds unixTime;
+    /** utc offset in hours */
+    double utcOffset;
 
     // Time fields
     int year;

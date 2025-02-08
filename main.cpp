@@ -22,5 +22,6 @@ void demo() {
 void testing() {
     Date d{-8};
     std::cout << "It is " << d << " at Stanford" << std::endl;
+    std::cout << "Unix time: " << Date::now() << std::endl;
 }
 

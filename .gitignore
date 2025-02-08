@@ -1,1 +1,6 @@
+# Executable
 main
+
+# Doxygen
+html
+latex
