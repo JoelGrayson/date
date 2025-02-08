@@ -23,6 +23,7 @@ typedef long Seconds;
 class Date {
 public:
     Date();
+    Date(double utcOffset);
     Date(int year, int month, int day);
 
     static int now(); //gets unix time for now

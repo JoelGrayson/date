@@ -41,6 +41,14 @@ Date::Date() {
     updateTimeFieldsWithUnixTime();
 }
 
+Date::Date(double utcOffset) {
+    initializeAllVariables();
+    this->utcOffset=utcOffset;
+    unixTime=now();
+    updateTimeFieldsWithUnixTime();
+}
+
+
 int Date::now() {
     return time(NULL);
 }
